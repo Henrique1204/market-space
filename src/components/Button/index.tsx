@@ -8,7 +8,7 @@ import {
 
 type variantEnum = 'primary' | 'secondary' | 'terciary';
 
-type ButtonProps = NativeBaseButtonProps & {
+type ButtonProps = Omit<NativeBaseButtonProps, 'variant'> & {
 	title: string;
 	variant?: variantEnum;
 };
@@ -16,13 +16,13 @@ type ButtonProps = NativeBaseButtonProps & {
 const BG_VARIANT_ENUM: Record<variantEnum, string> = {
 	primary: 'blue.300',
 	secondary: 'gray.600',
-	terciary: 'gray.400',
+	terciary: 'gray.300',
 };
 
 const PRESSED_BG_VARIANT_ENUM: Record<variantEnum, string> = {
 	primary: 'blue.500',
 	secondary: 'gray.700',
-	terciary: 'gray.300',
+	terciary: 'gray.400',
 };
 
 const TEXT_COLOR_VARIANT_ENUM: Record<variantEnum, string> = {
@@ -31,9 +31,11 @@ const TEXT_COLOR_VARIANT_ENUM: Record<variantEnum, string> = {
 	terciary: 'gray.700',
 };
 
-const Button: Component<ButtonProps> = ({ title, ...props }) => {
-	const variant = (props.variant || 'primary') as variantEnum;
-
+const Button: Component<ButtonProps> = ({
+	title,
+	variant = 'primary',
+	...props
+}) => {
 	return (
 		<NativeBaseButton
 			width='full'

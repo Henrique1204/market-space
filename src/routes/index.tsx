@@ -14,7 +14,7 @@ const Routes: React.FC = () => {
 	const { colors } = useTheme();
 
 	const theme = DefaultTheme;
-	theme.colors.background = colors.gray[700];
+	theme.colors.background = colors.gray[100];
 
 	const { user } = useAuth();
 

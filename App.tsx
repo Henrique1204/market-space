@@ -23,7 +23,7 @@ const App: React.FC = () => {
 	return (
 		<NativeBaseProvider theme={THEME}>
 			<StatusBar
-				barStyle='light-content'
+				barStyle='dark-content'
 				backgroundColor='transparent'
 				translucent
 			/>
