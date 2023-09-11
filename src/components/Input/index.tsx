@@ -52,13 +52,9 @@ const Input: Component<InputProps> = ({
 						borderWidth: 1,
 						borderColor: 'gray.500',
 					}}
-					type={isShowPassword ? 'text' : type}
+					secureTextEntry={type === 'password' && !isShowPassword}
 					{...props}
 				/>
-
-				<FormControl.ErrorMessage _text={{ color: 'red.500' }}>
-					{errorMessage}
-				</FormControl.ErrorMessage>
 
 				<Show show={type === 'password'}>
 					<TouchableOpacity
@@ -74,6 +70,10 @@ const Input: Component<InputProps> = ({
 					</TouchableOpacity>
 				</Show>
 			</Center>
+
+			<FormControl.ErrorMessage _text={{ color: 'red.500' }}>
+				{errorMessage}
+			</FormControl.ErrorMessage>
 		</FormControl>
 	);
 };
