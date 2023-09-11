@@ -4,7 +4,7 @@ import { useTheme } from 'native-base';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { IAppRoutes } from '@types_/routes';
+import * as Types from '@types_/routes';
 
 import Home from '@screens/Home';
 
@@ -12,7 +12,7 @@ import HomeSvg from '@icons/home.svg';
 import LogoutSvg from '@icons/logout.svg';
 import ProductsSvg from '@icons/products.svg';
 
-const { Navigator, Screen } = createBottomTabNavigator<IAppRoutes>();
+const { Navigator, Screen } = createBottomTabNavigator<Types.AppRoutes>();
 
 const AppRoutes: React.FC = () => {
 	const { sizes, colors } = useTheme();

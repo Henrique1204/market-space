@@ -1,17 +1,17 @@
 import { AccessibilityProps } from 'react-native';
 
 declare global {
-	export type IDefaultProps = Partial<AccessibilityProps> & {
+	export type DefaultProps = Partial<AccessibilityProps> & {
 		testID?: string;
 	};
 
-	export type IDefaultPropsWithChildren = IDefaultProps & {
+	export type DefaultPropsWithChildren = DefaultProps & {
 		children?: React.ReactNode;
 	};
 
-	export type IComponent<T = {}> = React.FC<IDefaultProps & T>;
+	export type Component<T = {}> = React.FC<DefaultProps & T>;
 
-	export type IComponentWithChildren<T = {}> = React.FC<
-		IDefaultPropsWithChildren & T
+	export type ComponentWithChildren<T = {}> = React.FC<
+		DefaultPropsWithChildren & T
 	>;
 }

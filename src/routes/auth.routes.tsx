@@ -8,14 +8,14 @@ import {
 import SingIn from '@screens/SingIn';
 import SingOut from '@screens/SingOut';
 
-type IAuthRoutes = {
+type AuthRoutes = {
 	signIn: undefined;
 	signUp: undefined;
 };
 
-export type IAuthNavigatorRoutesProps = NativeStackNavigationProp<IAuthRoutes>;
+export type AuthNavigatorRoutesProps = NativeStackNavigationProp<AuthRoutes>;
 
-const { Navigator, Screen } = createNativeStackNavigator<IAuthRoutes>();
+const { Navigator, Screen } = createNativeStackNavigator<AuthRoutes>();
 
 const AuthRoutes: React.FC = () => {
 	return (

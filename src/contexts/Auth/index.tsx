@@ -1,14 +1,14 @@
 import React from 'react';
 
-export type IAuthContextData = {
+export type AuthContextData = {
 	user: any | null;
 };
 
-export const AuthContext = React.createContext<IAuthContextData>(
-	{} as IAuthContextData
+export const AuthContext = React.createContext<AuthContextData>(
+	{} as AuthContextData
 );
 
-export const AuthContextProvider: IComponentWithChildren = ({ children }) => {
+export const AuthContextProvider: ComponentWithChildren = ({ children }) => {
 	return (
 		<AuthContext.Provider value={{ user: null }}>
 			{children}

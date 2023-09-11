@@ -5,7 +5,7 @@ type LoaderProps = {
 	loading: boolean;
 };
 
-const Loader: IComponentWithChildren<LoaderProps> = ({
+const Loader: ComponentWithChildren<LoaderProps> = ({
 	children,
 	loading,
 	...props
