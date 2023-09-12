@@ -94,7 +94,7 @@ const SingIn: React.FC = () => {
 					<Controller
 						name='email'
 						control={control}
-						rules={{ required: 'Informa o e-mail.' }}
+						rules={{ required: 'Informe o e-mail.' }}
 						render={({ field: { value, onChange } }) => (
 							<Input
 								placeholder='E-mail'
@@ -110,7 +110,7 @@ const SingIn: React.FC = () => {
 					<Controller
 						name='password'
 						control={control}
-						rules={{ required: 'Informa a senha.' }}
+						rules={{ required: 'Informe a senha.' }}
 						render={({ field: { value, onChange } }) => (
 							<Input
 								placeholder='Senha'
