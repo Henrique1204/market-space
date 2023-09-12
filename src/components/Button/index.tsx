@@ -15,13 +15,13 @@ type ButtonProps = Omit<NativeBaseButtonProps, 'variant'> & {
 
 const BG_VARIANT_ENUM: Record<variantEnum, string> = {
 	primary: 'blue.300',
-	secondary: 'gray.600',
+	secondary: 'gray.700',
 	terciary: 'gray.300',
 };
 
 const PRESSED_BG_VARIANT_ENUM: Record<variantEnum, string> = {
 	primary: 'blue.500',
-	secondary: 'gray.700',
+	secondary: 'gray.600',
 	terciary: 'gray.400',
 };
 
@@ -39,7 +39,7 @@ const Button: Component<ButtonProps> = ({
 	return (
 		<NativeBaseButton
 			width='full'
-			h={14}
+			h={12}
 			bg={BG_VARIANT_ENUM[variant as variantEnum]}
 			rounded='md'
 			_pressed={{

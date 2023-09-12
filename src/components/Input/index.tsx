@@ -53,6 +53,7 @@ const Input: Component<InputProps> = ({
 						borderColor: 'gray.500',
 					}}
 					secureTextEntry={type === 'password' && !isShowPassword}
+					type='text'
 					{...props}
 				/>
 
