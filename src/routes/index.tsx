@@ -22,7 +22,7 @@ const Routes: React.FC = () => {
 		<Loader loading={false}>
 			<Box flex={1}>
 				<NavigationContainer theme={theme}>
-					{user ? <AppRoutes /> : <AuthRoutes />}
+					{!user ? <AppRoutes /> : <AuthRoutes />}
 				</NavigationContainer>
 			</Box>
 		</Loader>

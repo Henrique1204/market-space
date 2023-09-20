@@ -7,6 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as Types from '@types_/routes';
 
 import Home from '@screens/Home';
+import Products from '@screens/Products';
 
 import HomeSvg from '@icons/home.svg';
 import LogoutSvg from '@icons/logout.svg';
@@ -28,11 +29,11 @@ const AppRoutes: React.FC = () => {
 				tabBarActiveTintColor: colors.gray[600],
 				tabBarInactiveTintColor: colors.gray[400],
 				tabBarStyle: {
-					height: Platform.OS === 'android' ? 'auto' : 96,
-					paddingBottom: sizes[10],
+					height: Platform.OS === 'android' ? 'auto' : 72,
+					paddingBottom: sizes[8],
 					paddingTop: sizes[6],
 					borderTopWidth: 0,
-					backgroundColor: colors.gray[600],
+					backgroundColor: colors.gray[100],
 				},
 			}}
 		>
@@ -48,7 +49,7 @@ const AppRoutes: React.FC = () => {
 
 			<Screen
 				name='products'
-				component={Home}
+				component={Products}
 				options={{
 					tabBarIcon: ({ color }) => (
 						<ProductsSvg fill={color} width={iconsSize} height={iconsSize} />
