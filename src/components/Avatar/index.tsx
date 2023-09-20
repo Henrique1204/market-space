@@ -1,25 +1,13 @@
 import React from 'react';
 
-import {
-	IBoxProps,
-	Image,
-	IImageProps,
-	Skeleton,
-	Box,
-	Button,
-} from 'native-base';
+import { Image, Skeleton, Box, Button } from 'native-base';
 import { PencilSimpleLine } from 'phosphor-react-native';
 
 import AvatarDefault from '@assets/images/avatarDefault.png';
 
-import Show from '../Show';
+import { AvatarProps } from './types';
 
-type AvatarProps = IBoxProps &
-	Pick<IImageProps, 'source' | 'alt'> & {
-		size: number;
-		loading?: boolean;
-		onEdit?: () => void;
-	};
+import Show from '../Show';
 
 const Avatar: Component<AvatarProps> = ({
 	testID = 'user-photo',

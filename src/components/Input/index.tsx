@@ -1,8 +1,9 @@
 import React from 'react';
 
+import { TouchableOpacity } from 'react-native';
+
 import {
 	Input as NativeBaseInput,
-	IInputProps,
 	FormControl,
 	Center,
 	Icon,
@@ -10,12 +11,9 @@ import {
 
 import { Eye, EyeSlash } from 'phosphor-react-native';
 
-import Show from '../Show';
-import { TouchableOpacity } from 'react-native';
+import { InputProps } from './types';
 
-type InputProps = IInputProps & {
-	errorMessage?: string;
-};
+import Show from '../Show';
 
 const Input: Component<InputProps> = ({
 	errorMessage = null,

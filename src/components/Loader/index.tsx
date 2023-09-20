@@ -1,9 +1,7 @@
 import React from 'react';
 import { Center, Spinner } from 'native-base';
 
-type LoaderProps = {
-	loading: boolean;
-};
+import { LoaderProps } from './types';
 
 const Loader: ComponentWithChildren<LoaderProps> = ({
 	children,

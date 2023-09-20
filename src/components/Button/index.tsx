@@ -1,54 +1,30 @@
 import React from 'react';
 
-import {
-	Button as NativeBaseButton,
-	IButtonProps as NativeBaseButtonProps,
-	Text,
-} from 'native-base';
+import { Button as NativeBaseButton, Text } from 'native-base';
 
-type variantEnum = 'primary' | 'secondary' | 'terciary';
+import { ButtonProps } from './types';
 
-type ButtonProps = Omit<NativeBaseButtonProps, 'variant'> & {
-	title: string;
-	variant?: variantEnum;
-};
-
-const BG_VARIANT_ENUM: Record<variantEnum, string> = {
-	primary: 'blue.300',
-	secondary: 'gray.700',
-	terciary: 'gray.300',
-};
-
-const PRESSED_BG_VARIANT_ENUM: Record<variantEnum, string> = {
-	primary: 'blue.500',
-	secondary: 'gray.600',
-	terciary: 'gray.400',
-};
-
-const TEXT_COLOR_VARIANT_ENUM: Record<variantEnum, string> = {
-	primary: 'white',
-	secondary: 'white',
-	terciary: 'gray.700',
-};
+import * as CONSTANTS from './constants';
 
 const Button: Component<ButtonProps> = ({
 	title,
+	size = 'full',
 	variant = 'primary',
 	...props
 }) => {
 	return (
 		<NativeBaseButton
-			width='full'
+			width={size === 'full' ? size : undefined}
 			h={12}
-			bg={BG_VARIANT_ENUM[variant as variantEnum]}
+			bg={CONSTANTS.BG_VARIANT_ENUM[variant]}
 			rounded='md'
 			_pressed={{
-				bg: PRESSED_BG_VARIANT_ENUM[variant],
+				bg: CONSTANTS.PRESSED_BG_VARIANT_ENUM[variant],
 			}}
 			{...props}
 		>
 			<Text
-				color={TEXT_COLOR_VARIANT_ENUM[variant]}
+				color={CONSTANTS.TEXT_COLOR_VARIANT_ENUM[variant]}
 				fontFamily='heading'
 				fontSize='md'
 			>

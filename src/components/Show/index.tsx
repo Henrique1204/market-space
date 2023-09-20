@@ -1,8 +1,6 @@
 import React from 'react';
 
-type ShowProps = {
-	show?: any;
-};
+import { ShowProps } from './types';
 
 const Show: ComponentWithChildren<ShowProps> = ({ show, children }) => {
 	if (Boolean(show)) return <>{children}</>;
