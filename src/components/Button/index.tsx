@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { Children } from 'react';
 
-import { Button as NativeBaseButton, Text } from 'native-base';
+import { Button as NativeBaseButton, HStack, Text } from 'native-base';
 
 import { ButtonProps } from './types';
 
 import * as CONSTANTS from './constants';
 
-const Button: Component<ButtonProps> = ({
+import Show from '../Show';
+
+const Button: ComponentWithChildren<ButtonProps> = ({
 	title,
 	size = 'full',
 	variant = 'primary',
+	children,
 	...props
 }) => {
 	return (
@@ -23,13 +26,18 @@ const Button: Component<ButtonProps> = ({
 			}}
 			{...props}
 		>
-			<Text
-				color={CONSTANTS.TEXT_COLOR_VARIANT_ENUM[variant]}
-				fontFamily='heading'
-				fontSize='md'
-			>
-				{title}
-			</Text>
+			<HStack flex={1} alignItems='center'>
+				{children}
+
+				<Text
+					ml={!children ? 0 : 1}
+					color={CONSTANTS.TEXT_COLOR_VARIANT_ENUM[variant]}
+					fontFamily='heading'
+					fontSize='md'
+				>
+					{title}
+				</Text>
+			</HStack>
 		</NativeBaseButton>
 	);
 };

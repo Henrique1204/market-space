@@ -1,9 +1,15 @@
 import React from 'react';
 
-import { Text } from 'react-native';
+import MainContainer from '@components/MainContainer';
+
+import Header from './components/Header';
 
 const Home: React.FC = () => {
-	return <Text>Home</Text>;
+	return (
+		<MainContainer>
+			<Header />
+		</MainContainer>
+	);
 };
 
 export default Home;
