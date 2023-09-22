@@ -7,6 +7,7 @@ const MainContainer: ComponentWithChildren = ({ children }) => {
 		<ScrollView
 			contentContainerStyle={{ flexGrow: 1 }}
 			showsVerticalScrollIndicator={false}
+			bg='gray.200'
 		>
 			<VStack px={8} py={16}>
 				{children}
