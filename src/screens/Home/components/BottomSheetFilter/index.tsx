@@ -28,6 +28,7 @@ import Checkbox from '@components/Checkbox';
 import FilterOptionGroup from '../FilterOptionGroup';
 import FilterTagForCondition from '../FilterTagForCondition';
 import { handleToggleSelectionFn } from '../FilterTagForCondition/types';
+import Button from '@components/Button';
 
 let open = () => {};
 let close = () => {};
@@ -91,7 +92,7 @@ const BottomSheetFilter: Component = () => {
 					backgroundColor: colors.gray[300],
 				}}
 			>
-				<Box px={6} pt={4}>
+				<Box px={6} pt={4} flex={1}>
 					<HStack justifyContent='space-between' alignItems='center'>
 						<Heading
 							color='gray.700'
@@ -145,6 +146,11 @@ const BottomSheetFilter: Component = () => {
 							</VStack>
 						</NativeBaseChackbox.Group>
 					</FilterOptionGroup>
+
+					<HStack space={4} position='absolute' bottom={16} left={6}>
+						<Button flex={1 / 2} title='Resetar filtros' variant='terciary' />
+						<Button flex={1 / 2} title='Aplicar filtros' variant='secondary' />
+					</HStack>
 				</Box>
 			</BottomSheetModal>
 		</BottomSheetModalProvider>
