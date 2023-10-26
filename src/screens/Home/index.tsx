@@ -2,11 +2,17 @@ import React from 'react';
 
 import { FlatList, View } from 'native-base';
 
+import {
+	BottomSheetModal,
+	BottomSheetModalProvider,
+} from '@gorhom/bottom-sheet';
+
 import MainContainer from '@components/MainContainer';
 
 import Header from './components/Header';
 import MyAdCard from './components/MyAdCard';
 import SearchField from './components/SearchField';
+
 import ProductCard from './components/ProductCard';
 
 import { ProductStatusEnum } from './components/ProductCard/types';

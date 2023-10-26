@@ -1,13 +1,6 @@
 import React from 'react';
 
-interface IUseActiveClickReturn {
-	active: boolean;
-
-	onPressIn: () => void;
-	onPressOut: () => void;
-}
-
-type useActiveClickFn = (delay?: number) => IUseActiveClickReturn;
+import { useActiveClickFn } from './types';
 
 /**
  * Hook para simular o evento de "active" do css do navegador.

@@ -8,7 +8,11 @@ import {
 	Karla_700Bold,
 } from '@expo-google-fonts/karla';
 
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
 import { THEME } from '@assets/theme/index';
+
+import BottomSheetFilter from '@screens/Home/components/BottomSheetFilter';
 
 import Loader from '@components/Loader';
 
@@ -21,21 +25,25 @@ const App: React.FC = () => {
 	});
 
 	return (
-		<NativeBaseProvider theme={THEME}>
-			<StatusBar
-				barStyle='dark-content'
-				backgroundColor='transparent'
-				translucent
-			/>
+		<GestureHandlerRootView style={{ flex: 1 }}>
+			<NativeBaseProvider theme={THEME}>
+				<StatusBar
+					barStyle='dark-content'
+					backgroundColor='transparent'
+					translucent
+				/>
 
-			<Loader
-				loading={!fontsLoaded}
-				accessibilityLabel='Animação de carregamento esperando arquivos carregarem.'
-				aria-hidden={fontsLoaded}
-			>
-				<Routes />
-			</Loader>
-		</NativeBaseProvider>
+				<Loader
+					loading={!fontsLoaded}
+					accessibilityLabel='Animação de carregamento esperando arquivos carregarem.'
+					aria-hidden={fontsLoaded}
+				>
+					<Routes />
+
+					<BottomSheetFilter.Provider />
+				</Loader>
+			</NativeBaseProvider>
+		</GestureHandlerRootView>
 	);
 };
 
