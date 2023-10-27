@@ -30,7 +30,7 @@ const AppRoutes: React.FC = () => {
 				tabBarInactiveTintColor: colors.gray[400],
 				tabBarStyle: {
 					height: Platform.OS === 'android' ? 'auto' : 72,
-					paddingBottom: sizes[8],
+					paddingBottom: sizes[2],
 					paddingTop: sizes[6],
 					borderTopWidth: 0,
 					backgroundColor: colors.gray[100],

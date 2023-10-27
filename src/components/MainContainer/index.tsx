@@ -2,14 +2,19 @@ import React from 'react';
 
 import { ScrollView, VStack } from 'native-base';
 
-const MainContainer: ComponentWithChildren = ({ children }) => {
+import { MainContainerProps } from './types';
+
+const MainContainer: ComponentWithChildren<MainContainerProps> = ({
+	children,
+	pb = 16,
+}) => {
 	return (
 		<ScrollView
 			contentContainerStyle={{ flexGrow: 1 }}
 			showsVerticalScrollIndicator={false}
 			bg='gray.200'
 		>
-			<VStack px={8} py={16}>
+			<VStack px={8} pt={4} pb={pb}>
 				{children}
 			</VStack>
 		</ScrollView>

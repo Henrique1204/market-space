@@ -2,11 +2,6 @@ import React from 'react';
 
 import { FlatList, View } from 'native-base';
 
-import {
-	BottomSheetModal,
-	BottomSheetModalProvider,
-} from '@gorhom/bottom-sheet';
-
 import MainContainer from '@components/MainContainer';
 
 import Header from './components/Header';
@@ -28,7 +23,7 @@ const PRODUCT_MOCK = [
 
 const Home: React.FC = () => {
 	return (
-		<MainContainer>
+		<MainContainer pb={8}>
 			<Header />
 
 			<MyAdCard />

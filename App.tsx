@@ -1,6 +1,9 @@
 import React from 'react';
-import { StatusBar } from 'react-native';
+
+import { SafeAreaView, StatusBar } from 'react-native';
 import { NativeBaseProvider } from 'native-base';
+
+import { LinearGradient } from 'expo-linear-gradient';
 
 import {
 	useFonts,
@@ -25,25 +28,32 @@ const App: React.FC = () => {
 	});
 
 	return (
-		<GestureHandlerRootView style={{ flex: 1 }}>
-			<NativeBaseProvider theme={THEME}>
-				<StatusBar
-					barStyle='dark-content'
-					backgroundColor='transparent'
-					translucent
-				/>
+		<LinearGradient
+			colors={[THEME.colors.gray['200'], THEME.colors.gray['100']]}
+			style={{ flex: 1 }}
+		>
+			<SafeAreaView style={{ flex: 1 }}>
+				<GestureHandlerRootView style={{ flex: 1 }}>
+					<NativeBaseProvider theme={THEME}>
+						<StatusBar
+							barStyle='dark-content'
+							backgroundColor='transparent'
+							translucent
+						/>
 
-				<Loader
-					loading={!fontsLoaded}
-					accessibilityLabel='Animação de carregamento esperando arquivos carregarem.'
-					aria-hidden={fontsLoaded}
-				>
-					<Routes />
+						<Loader
+							loading={!fontsLoaded}
+							accessibilityLabel='Animação de carregamento esperando arquivos carregarem.'
+							aria-hidden={fontsLoaded}
+						>
+							<Routes />
 
-					<BottomSheetFilter.Provider />
-				</Loader>
-			</NativeBaseProvider>
-		</GestureHandlerRootView>
+							<BottomSheetFilter.Provider />
+						</Loader>
+					</NativeBaseProvider>
+				</GestureHandlerRootView>
+			</SafeAreaView>
+		</LinearGradient>
 	);
 };
 
