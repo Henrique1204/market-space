@@ -3,7 +3,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 export type AppRoutes = {
 	home: undefined;
-	products: undefined;
+	catalog: undefined;
 };
 
 export type AuthRoutes = {
@@ -11,6 +11,13 @@ export type AuthRoutes = {
 	signUp: undefined;
 };
 
+export type HomeRoutes = {
+	products: undefined;
+	productDetails: { id: number };
+};
+
 export type AppNavigatorRoutesProps = BottomTabNavigationProp<AppRoutes>;
 
 export type AuthNavigatorRoutesProps = NativeStackNavigationProp<AuthRoutes>;
+
+export type HomehNavigatorRoutesProps = NativeStackNavigationProp<HomeRoutes>;

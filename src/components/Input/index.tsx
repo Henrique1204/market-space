@@ -19,6 +19,7 @@ const Input: Component<InputProps> = ({
 	errorMessage = null,
 	isInvalid,
 	type,
+	h = 14,
 	...props
 }) => {
 	const [isShowPassword, setIsShowPassword] = React.useState<boolean>(false);
@@ -28,10 +29,10 @@ const Input: Component<InputProps> = ({
 	const invalid = !!errorMessage || isInvalid;
 
 	return (
-		<FormControl isInvalid={invalid} mb={4} position='relative'>
+		<FormControl h={h} isInvalid={invalid} mb={4} position='relative'>
 			<Center flex={1}>
 				<NativeBaseInput
-					h={14}
+					h={h}
 					px={4}
 					borderRadius={6}
 					borderWidth={0}
