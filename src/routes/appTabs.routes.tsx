@@ -7,15 +7,15 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as Types from '@types_/routes';
 
 import Catalog from '@screens/Catalog';
-import HomeRoutes from './home.routes';
+import Home from '@screens/Home';
 
 import HomeSvg from '@icons/home.svg';
 import LogoutSvg from '@icons/logout.svg';
 import ProductsSvg from '@icons/products.svg';
 
-const { Navigator, Screen } = createBottomTabNavigator<Types.AppRoutes>();
+const { Navigator, Screen } = createBottomTabNavigator<Types.AppTabsRoutes>();
 
-const AppRoutes: React.FC = () => {
+const AppTabs: React.FC = () => {
 	const { sizes, colors } = useTheme();
 
 	const iconsSize = sizes[6];
@@ -40,7 +40,7 @@ const AppRoutes: React.FC = () => {
 		>
 			<Screen
 				name='home'
-				component={HomeRoutes}
+				component={Home}
 				options={{
 					tabBarIcon: ({ color }) => (
 						<HomeSvg fill={color} width={iconsSize} height={iconsSize} />
@@ -61,4 +61,4 @@ const AppRoutes: React.FC = () => {
 	);
 };
 
-export default AppRoutes;
+export default AppTabs;

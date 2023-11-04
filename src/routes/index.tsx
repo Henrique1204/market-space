@@ -8,7 +8,7 @@ import { useAuth } from '@contexts/Auth';
 import Loader from '@components/Loader';
 
 import AuthRoutes from './auth.routes';
-import AppRoutes from './app.routes';
+import AppStack from './appStack.routes';
 
 const Routes: React.FC = () => {
 	const { colors } = useTheme();
@@ -22,7 +22,7 @@ const Routes: React.FC = () => {
 		<Loader loading={false}>
 			<Box flex={1}>
 				<NavigationContainer theme={theme}>
-					{!user ? <AppRoutes /> : <AuthRoutes />}
+					{!user ? <AppStack /> : <AuthRoutes />}
 				</NavigationContainer>
 			</Box>
 		</Loader>

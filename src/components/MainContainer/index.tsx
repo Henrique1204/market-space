@@ -9,15 +9,15 @@ const MainContainer: ComponentWithChildren<MainContainerProps> = ({
 	pb = 16,
 }) => {
 	return (
-		// <ScrollView
-		// 	contentContainerStyle={{ flexGrow: 1 }}
-		// 	showsVerticalScrollIndicator={false}
-		// 	bg='gray.200'
-		// >
-		<VStack px={8} pt={4} pb={pb} flex={1} bg='gray.200'>
-			{children}
-		</VStack>
-		// </ScrollView>
+		<ScrollView
+			contentContainerStyle={{ flexGrow: 1 }}
+			showsVerticalScrollIndicator={false}
+			bg='gray.200'
+		>
+			<VStack px={8} pt={4} pb={pb} flex={1}>
+				{children}
+			</VStack>
+		</ScrollView>
 	);
 };
 

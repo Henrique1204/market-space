@@ -15,7 +15,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 import { THEME } from '@assets/theme/index';
 
-import BottomSheetFilter from '@screens/Products/components/BottomSheetFilter';
+import BottomSheetFilter from '@screens/Home/components/BottomSheetFilter';
 
 import Loader from '@components/Loader';
 

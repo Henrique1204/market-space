@@ -1,7 +1,7 @@
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-export type AppRoutes = {
+export type AppBottomRoutes = {
 	home: undefined;
 	catalog: undefined;
 };
@@ -11,13 +11,15 @@ export type AuthRoutes = {
 	signUp: undefined;
 };
 
-export type HomeRoutes = {
+export type AppStackRoutes = {
+	appBottom: undefined;
 	products: undefined;
 	productDetails: { id: number };
 };
 
-export type AppNavigatorRoutesProps = BottomTabNavigationProp<AppRoutes>;
+export type AppNavigatorRoutesProps = BottomTabNavigationProp<AppBottomRoutes>;
 
 export type AuthNavigatorRoutesProps = NativeStackNavigationProp<AuthRoutes>;
 
-export type HomehNavigatorRoutesProps = NativeStackNavigationProp<HomeRoutes>;
+export type HomehNavigatorRoutesProps =
+	NativeStackNavigationProp<AppStackRoutes>;
