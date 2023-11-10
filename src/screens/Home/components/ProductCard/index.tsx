@@ -5,7 +5,7 @@ import { Box, HStack, Image, Text, VStack } from 'native-base';
 
 import { useNavigation } from '@react-navigation/native';
 
-import { HomehNavigatorRoutesProps } from '@types_/routes';
+import { AppStackNavigatorRoutesProps } from '@types_/routes';
 
 import ProductImageMock from '@assets/images/tenis.png';
 
@@ -21,7 +21,7 @@ const ProductCard: Component<ProductCardProps> = ({
 	status,
 	price,
 }) => {
-	const { navigate } = useNavigation<HomehNavigatorRoutesProps>();
+	const { navigate } = useNavigation<AppStackNavigatorRoutesProps>();
 
 	const goToProductDetails = () => navigate('productDetails', { id });
 

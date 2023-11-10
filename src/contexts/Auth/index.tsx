@@ -1,8 +1,6 @@
 import React from 'react';
 
-export type AuthContextData = {
-	user: any | null;
-};
+import { AuthContextData } from './types';
 
 export const AuthContext = React.createContext<AuthContextData>(
 	{} as AuthContextData

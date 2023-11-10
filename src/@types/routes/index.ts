@@ -6,19 +6,20 @@ export type AppTabsRoutes = {
 	catalog: undefined;
 };
 
-export type AuthRoutes = {
-	signIn: undefined;
-	signUp: undefined;
-};
-
 export type AppStackRoutes = {
 	appTabsRoutes: undefined;
 	productDetails: { id: number };
 };
 
-export type AppNavigatorRoutesProps = BottomTabNavigationProp<AppTabsRoutes>;
+export type AuthRoutes = {
+	signIn: undefined;
+	signUp: undefined;
+};
 
 export type AuthNavigatorRoutesProps = NativeStackNavigationProp<AuthRoutes>;
 
-export type HomehNavigatorRoutesProps =
+export type AppTabsNavigatorRoutesProps =
+	BottomTabNavigationProp<AppTabsRoutes>;
+
+export type AppStackNavigatorRoutesProps =
 	NativeStackNavigationProp<AppStackRoutes>;

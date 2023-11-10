@@ -20,11 +20,9 @@ const Routes: React.FC = () => {
 
 	return (
 		<Loader loading={false}>
-			<Box flex={1}>
-				<NavigationContainer theme={theme}>
-					{!user ? <AppStack /> : <AuthRoutes />}
-				</NavigationContainer>
-			</Box>
+			<NavigationContainer theme={theme}>
+				{!user ? <AppStack /> : <AuthRoutes />}
+			</NavigationContainer>
 		</Loader>
 	);
 };

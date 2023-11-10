@@ -8,9 +8,22 @@ import { ArrowLeft, PencilSimpleLine, Plus } from 'phosphor-react-native';
 import { HeaderProps } from './types';
 import Show from '@components/Show';
 
-const Header: Component<HeaderProps> = ({ title, onGoBack, onAdd, onEdit }) => {
+const Header: Component<HeaderProps> = ({
+	title,
+	onGoBack,
+	onAdd,
+	onEdit,
+	...props
+}) => {
 	return (
-		<HStack pt={2} pb={4} justifyContent='center' alignItems='center'>
+		<HStack
+			pt={2}
+			pb={4}
+			px={4}
+			justifyContent='center'
+			alignItems='center'
+			{...props}
+		>
 			<Show show={!!onGoBack}>
 				<TouchableOpacity onPress={onGoBack}>
 					<ArrowLeft />
